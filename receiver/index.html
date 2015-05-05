@@ -11,13 +11,13 @@
 <script src="https://www.gstatic.com/cast/js/receiver/1.0/cast_receiver.js"></script>
 <script>
 	$(function() {
-		var receiver = new cast.receiver.Receiver('chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID', ['HelloWorld']),
-			channelHandler = new cast.receiver.ChannelHandler('HelloWorld'),
+		var receiver = new cast.receiver.Receiver('chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID', ['urn:x-cast:com.google.cast.sample.helloworld']),
+			channelHandler = new cast.receiver.ChannelHandler('urn:x-cast:com.google.cast.sample.helloworld'),
 			$messages = $('.messages'),
 			$body = $('body');
 		
 		channelHandler.addChannelFactory(
-			receiver.createChannelFactory('HelloWorld'));
+			receiver.createChannelFactory('urn:x-cast:com.google.cast.sample.helloworld'));
 
 		receiver.start();
 
